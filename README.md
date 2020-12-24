@@ -1,3 +1,5 @@
+![](testing/mfs-testing-setup.jpg)
+
 # Project Mashiro
 
 Explore synthetic aperture radar imaging by building real hardware.
