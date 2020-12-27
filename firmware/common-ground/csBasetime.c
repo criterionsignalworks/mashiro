@@ -1,6 +1,6 @@
 /*
 
-csBasetime.h
+csBasetime.c
 Basic timer function and system clock configuration 
 
 IAR EW library for Coda 0.6/0.7 and compatible.
