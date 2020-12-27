@@ -1,0 +1,217 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  23/Dec/2020  11:05:42
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\Syntax\Desktop\Oasis
+#        Sandbox\~Sandbox\Sources\csw-wireflight\Debug\Exe\csw-wireflight.out
+#    Map file     =
+#        C:\Users\Syntax\Desktop\Oasis
+#        Sandbox\~Sandbox\Sources\csw-wireflight\Debug\List\csw-wireflight.map
+#    Command line =
+#        -f C:\Users\Syntax\AppData\Local\Temp\EW765F.tmp
+#        ("C:\Users\Syntax\Desktop\Oasis
+#        Sandbox\~Sandbox\Sources\csw-wireflight\Debug\Obj\main.o"
+#        --no_out_extension -o "C:\Users\Syntax\Desktop\Oasis
+#        Sandbox\~Sandbox\Sources\csw-wireflight\Debug\Exe\csw-wireflight.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\Syntax\Desktop\Oasis
+#        Sandbox\~Sandbox\Sources\csw-wireflight\Debug\List\csw-wireflight.map"
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\ST\stm32f730x8.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x20'0000 { ro section .intvec };
+"P1":  place in [from 0x20'0000 to 0x20'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+"P4":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          block CSTACK, block PROC_STACK };
+define block HEAP with size = 8K, alignment = 8 { };
+"P5":  place in [from 0x2001'0000 to 0x2003'bfff] |
+                [from 0x2003'c000 to 0x2003'ffff] { rw, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P7"
+  rw section application_specific_rw  in "P2|P7"
+  section .backup_sram                in "P6"
+  section .textrw                     in "P3"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code    0x20'0000    0x40  vector_table_M.o [4]
+                              - 0x20'0040    0x40
+
+"P1":                                       0x120
+  .text              ro code    0x20'0040    0x30  main.o [1]
+  .text              ro code    0x20'0070    0x2e  copy_init3.o [4]
+  .text              ro code    0x20'009e     0x2  vector_table_M.o [4]
+  .text              ro code    0x20'00a0    0x28  data_init.o [4]
+  .text              ro code    0x20'00c8    0x22  fpinit_M.o [3]
+  .iar.init_table    const      0x20'00ec    0x14  - Linker created -
+  .text              ro code    0x20'0100    0x1e  cmain.o [4]
+  .text              ro code    0x20'011e     0x4  low_level_init.o [2]
+  .text              ro code    0x20'0122     0x4  exit.o [2]
+  .text              ro code    0x20'0128     0xa  cexit.o [4]
+  .text              ro code    0x20'0134    0x14  exit.o [5]
+  .text              ro code    0x20'0148     0xc  cstartup_M.o [4]
+  .rodata            const      0x20'0154     0x0  copy_init3.o [4]
+  Initializer bytes  const      0x20'0154     0xc  <for P5>
+                              - 0x20'0160   0x120
+
+"P4":                                      0x2000
+  CSTACK                      0x2000'0000  0x2000  <Block>
+    CSTACK           uninit   0x2000'0000  0x2000  <Block tail>
+                            - 0x2000'2000  0x2000
+
+"P5":                                         0xc
+  P5                          0x2001'0000     0xc  <Init block>
+    .data            inited   0x2001'0000     0x4  main.o [1]
+    .data            inited   0x2001'0004     0x4  main.o [1]
+    .data            inited   0x2001'0008     0x4  main.o [1]
+                            - 0x2001'000c     0xc
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+    0x20'0160    0x20'ffff    0xfea0
+  0x2000'2000  0x2000'ffff    0xe000
+  0x2001'000c  0x2003'bfff  0x2'bff4
+  0x2003'c000  0x2003'ffff    0x4000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0xc:
+            0x20'0154   0xc
+    1 destination range, total size 0xc:
+          0x2001'0000   0xc
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\Users\Syntax\Desktop\Oasis Sandbox\~Sandbox\Sources\csw-wireflight\Debug\Obj: [1]
+    main.o                 48       12       12
+    -------------------------------------------
+    Total:                 48       12       12
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    copy_init3.o           46
+    cstartup_M.o           12
+    data_init.o            40
+    vector_table_M.o       66
+    -------------------------------------------
+    Total:                204
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    4        2
+    Linker created                  20    8'192
+-----------------------------------------------
+    Grand Total:          318       34    8'204
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base     0x20'00ec         --   Gb  - Linker created -
+.iar.init_table$$Limit    0x20'0100         --   Gb  - Linker created -
+?main                     0x20'0101        Code  Gb  cmain.o [4]
+CSTACK$$Base            0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2000         --   Gb  - Linker created -
+M                       0x2001'0000   0x4  Data  Gb  main.o [1]
+O                       0x2001'0004   0x4  Data  Gb  main.o [1]
+Region$$Table$$Base       0x20'00ec         --   Gb  - Linker created -
+Region$$Table$$Limit      0x20'0100         --   Gb  - Linker created -
+__cmain                   0x20'0101        Code  Gb  cmain.o [4]
+__exit                    0x20'0135  0x14  Code  Gb  exit.o [5]
+__iar_copy_init3          0x20'0071  0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3          0x20'00a1  0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp            0x20'00c9        Code  Gb  fpinit_M.o [3]
+__iar_program_start       0x20'0149        Code  Gb  cstartup_M.o [4]
+__low_level_init          0x20'011f   0x4  Code  Gb  low_level_init.o [2]
+__vector_table            0x20'0000        Data  Gb  vector_table_M.o [4]
+_call_main                0x20'010d        Code  Gb  cmain.o [4]
+_exit                     0x20'0129        Code  Gb  cexit.o [4]
+_main                     0x20'011b        Code  Gb  cmain.o [4]
+coolest                 0x2001'0008   0x4  Data  Gb  main.o [1]
+exit                      0x20'0123   0x4  Code  Gb  exit.o [2]
+main                      0x20'0041  0x22  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\Syntax\Desktop\Oasis Sandbox\~Sandbox\Sources\csw-wireflight\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+    318 bytes of readonly  code memory
+     34 bytes of readonly  data memory
+  8'204 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
