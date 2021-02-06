@@ -1,4 +1,4 @@
-![](images-mashiro-fs-block3-cover3-full-compressed.jpg)
+![](images/mashiro-fs-block3-cover3-full-compressed.jpg)
 
 # Project Mashiro
 
