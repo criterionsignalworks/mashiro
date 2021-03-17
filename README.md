@@ -4,7 +4,7 @@
 
 Explore synthetic aperture radar imaging by building real hardware.
 
-Currently working on RF front end and programming microcontrollers.
+Currently working on RF front end, processing algorithm, and programming microcontrollers.
 
 ## Current status
 
