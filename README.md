@@ -6,6 +6,8 @@ Explore synthetic aperture radar imaging by building real hardware.
 
 Currently working on RF front end, processing algorithm, and programming microcontrollers. 
 
+[Youtube video documenting progress for BHSE](https://www.youtube.com/watch?v=1RcpoqMpDEw)
+
 ## Current status 
 
 As of March 2021, we have begun additional exploration and development of a processing script for data captured from analog front end. Current plans include use of range migration algorithm presented in §10 of *Spotlight Synthetic Aperture Radar* with modifications to motion correction element. Additionally, we developed [CS Gain Block](https://github.com/criterionsignalworks/gain-block) for rapid prototyping the receive section for our next hardware iteration. 
