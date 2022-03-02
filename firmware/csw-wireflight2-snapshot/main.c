@@ -15,7 +15,7 @@ TCS 2020 10
 
 #include <stdint.h>
 
-unsigned long sy; // one two three four retard at the door 
+unsigned long sy; 
 
 // PB BASE 0x40020400
 // PB MODER 0x00000000, 01 = GP output
@@ -34,8 +34,8 @@ volatile uint32_t *O = (volatile uint32_t *)0x40020414;
 volatile uint32_t *T2ARR = (volatile uint32_t *)0x4000002C;
 volatile uint32_t *T2PSC = (volatile uint32_t *)0x40000028;
 volatile uint32_t *T2hello = (volatile uint32_t *)0x4000000C;
-volatile uint32_t *T2homo = (volatile uint32_t *)0x40000000;
-volatile uint32_t *T2rererererererersdfadsfasdf = (volatile uint32_t *)0x40000010;
+volatile uint32_t *T2hi = (volatile uint32_t *)0x40000000;
+volatile uint32_t *T2re = (volatile uint32_t *)0x40000010;
 volatile uint32_t *coolest = (volatile uint32_t *)0xE000E100UL;
 
 void delay(unsigned long tg){
@@ -49,14 +49,14 @@ void inittim2()			//  Setup Timer 2 to generate an interrupt every 1mS based on 
     *T2PSC = 0x05;		//  prescaler is 32.
     *T2ARR = 0x000001f4; 	// is this correct?????
     *T2hello = 0x1;		//  enable update interrupt by writing 1 to UIE
-    *T2homo = 0x1;		//  enable timer by writing 1 to CEN
+    *T2hi = 0x1;		//  enable timer by writing 1 to CEN
 }
 
 /*
 #pragma vector = 28
 __interrupt void TIM2_IRQHandler(void) {
     sy++;			//  timer increment
-    *T2rererererererersdfadsfasdf = 0x0;		//  no more interrupt!!!!!!!!!!!!!!!!!!!!!!  
+    *T2re = 0x0;		//  no more interrupt!!!!!!!!!!!!!!!!!!!!!!  
 }
 
 // NVIC ISER 0xE000E100UL
